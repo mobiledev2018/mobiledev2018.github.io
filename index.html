@@ -9,7 +9,9 @@
         <title>Cole Cannon's Assignments</title>
     </head>
     <body>
+
         <div class="basic">
+
             <p class="noTopWhitespace">Fill the page with a certain number</p>
 
             <p class="noBottomWhitespace">What would you like to repeat?</p>
@@ -43,10 +45,25 @@
         </div>
 
         <div class="basic">
-            <p class="noBottomWhitespace">Enter a valid font name</p>
-            <input class="textboxFit" type="text" id="fontChange">
+            <p class="noTopWhitespace">Save your progress</p>
+            <p>Enter save name</p>
+            <input class="textboxFit" type="text" id="saveName">
+            <button class="button" type="button" onclick="saveWork()">Save</button>
+
+            <br><br>
+
+            <p class="noTopWhitespace">Load previous save</p>
+            <p>Enter save name</p>
+            <input class="textboxFit" type="text" id="loadName">
+            <button class="button" type="button" onclick="loadWork()">Load</button>
+
         </div>
 
-        <div class="output" id="output"><p id="outputText"></p></div>
+        <div class="output" id="output">
+
+            <p id="outputText"></p>
+
+        </div>
+
     </body>
 </html>
