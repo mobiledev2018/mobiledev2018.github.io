@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="CIT 261 Assignments">
+        <script type="text/javascript" src="scripts/firstTopic.js"></script>
+        <link rel="stylesheet" href="styles/main.css">
+        <title>Cole Cannon's Assignments</title>
+    </head>
+    <body>
+        <div class="basic">
+            <p class="noTopWhitespace">Fill the page with a certain number</p>
+
+            <p class="noBottomWhitespace">What would you like to repeat?</p>
+            <input class="textboxFit" type="text" id="repeat">
+
+            <br>
+
+            <p class="noBottomWhitespace">How many times?</p>
+            <input class="textboxFit" type="text" id="times">
+
+            <br><br>
+
+            <button class="button" type="button" onclick="fillLoop()">Go</button>
+
+            <br>
+
+            <button class="button" type="button" onclick="clearOutputDiv()">Clear</button>
+
+            <br>
+
+            <p class="noBottomWhitespace">Enter a valid color name or hex. Include # if using hex</p>
+            <input class="textboxFit" type="text" id="colorChange">
+
+            <button class="button" type="button" onclick="changeColor()">Change color</button>
+
+            <p class="noBottomWhitespace">Enter a valid font name</p>
+            <input class="textboxFit" type="text" id="fontChange">
+
+            <button class="button" type="button" onclick="changeFont()">Change font</button>
+
+        </div>
+
+        <div class="basic">
+            <p class="noBottomWhitespace">Enter a valid font name</p>
+            <input class="textboxFit" type="text" id="fontChange">92
+        </div>
+
+        <div class="output" id="output"><p id="outputText"></p></div>
+    </body>
+</html>
