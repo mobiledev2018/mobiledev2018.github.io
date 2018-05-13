@@ -14,30 +14,31 @@
 
             <p class="noTopWhitespace">Fill the page with a certain number</p>
 
-            <p class="noBottomWhitespace">What text would you like to repeat?</p>
+            <p class="noWhitespace">What text would you like to repeat?</p>
             <input class="textboxFit" type="text" id="repeat">
-
-            <br>
-
-            <p class="noBottomWhitespace">How many times?</p>
-            <input class="textboxFit" type="text" id="times">
 
             <br><br>
 
-            <button class="button" type="button" onclick="fillLoop()">Go</button>
+            <p class="noWhitespace">How many times?</p>
+            <input class="textboxFit" type="text" id="times">
 
             <br>
+
+            <button class="button" type="button" onclick="fillLoop()">Go</button>
+
 
             <button class="button" type="button" onclick="clearOutputDiv()">Clear</button>
 
-            <br>
+            <br><br>
 
-            <p class="noBottomWhitespace">Enter a valid color name or hex. Include # if using hex</p>
+            <p class="noWhitespace">Enter a valid color name or hex. Include # if using hex</p>
             <input class="textboxFit" type="text" id="colorChange">
 
             <button class="button" type="button" onclick="changeColor()">Change color</button>
-
-            <p class="noBottomWhitespace">Enter a valid font name</p>
+            
+            <br><br>
+            
+            <p class="noWhitespace">Enter a valid font name</p>
             <input class="textboxFit" type="text" id="fontChange">
 
             <button class="button" type="button" onclick="changeFont()">Change font</button>
@@ -45,15 +46,21 @@
         </div>
 
         <div class="basic">
-            <p class="noTopWhitespace">Save your progress</p>
-            <p>Enter save name</p>
+            <p class="noWhitespace">Save your progress</p>
+            
+            <br>
+            
+            <p class="noWhitespace">Enter save name</p>
             <input class="textboxFit" type="text" id="saveName">
             <button class="button" type="button" onclick="saveWork()">Save</button>
 
             <br><br>
 
-            <p class="noTopWhitespace">Load previous save</p>
-            <p>Enter save name</p>
+            <p class="noWhitespace">Load previous save</p>
+            
+            <br>
+            
+            <p class="noWhitespace">Enter save name</p>
             <input class="textboxFit" type="text" id="loadName">
             <button class="button" type="button" onclick="loadWork()">Load</button>
 
