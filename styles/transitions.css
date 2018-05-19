@@ -1,0 +1,58 @@
+div
+{
+    width: 100px;
+    height: 100px;
+    background: black;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 100px;
+    float: left;
+
+    transition: all 6s;
+}
+
+#linear 
+{
+    transition-timing-function: linear;
+}
+
+#ease
+{
+    transition-timing-function: ease;
+}
+
+#ease-in
+{
+    transition-timing-function: ease-in;
+}
+
+#ease-out 
+{
+    transition-timing-function: ease-out;
+}
+
+#ease-in-out 
+{
+    transition-timing-function: ease-in-out;
+}
+
+#cubic
+{
+    transition-timing-function: cubic-bezier(.81,.01,.27,.99);
+}
+
+
+div:hover
+{
+    width: 400px;
+    height: 400px;
+    background: white;
+    color: black;
+    font-size: 80px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 400px;
+
+}

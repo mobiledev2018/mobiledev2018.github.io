@@ -47,8 +47,6 @@ function loadWork()
 
     document.getElementById('outputText').style.color = loadedObject.color;
     document.getElementById('outputText').style.fontFamily = loadedObject.font;
-
-
 }
 
 function test()

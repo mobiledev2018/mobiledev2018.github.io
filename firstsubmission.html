@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+    
+    <head>
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="CIT 261 Assignments">
+        
+        <script type="text/javascript" src="scripts/firstSubmissionScripts.js"></script>
+        <link rel="stylesheet" href="styles/firstSubmission.css">
+        
+        <title>Cole Cannon's Assignments</title>
+        
+    </head>
+    
+    <body>
+
+        <div class="basic">
+
+            <p class="noTopWhitespace">Fill the page with a certain number</p>
+
+            <p class="noWhitespace">What text would you like to repeat?</p>
+            <input class="textboxFit" type="text" id="repeat">
+
+            <br><br>
+
+            <p class="noWhitespace">How many times?</p>
+            <input class="textboxFit" type="text" id="times">
+
+            <br>
+
+            <button class="button" type="button" onclick="fillLoop()">Go</button>
+
+
+            <button class="button" type="button" onclick="clearOutputDiv()">Clear</button>
+
+            <br><br>
+
+            <p class="noWhitespace">Enter a valid color name or hex. Include # if using hex</p>
+            <input class="textboxFit" type="text" id="colorChange">
+
+            <button class="button" type="button" onclick="changeColor()">Change color</button>
+            
+            <br><br>
+            
+            <p class="noWhitespace">Enter a valid font name</p>
+            <input class="textboxFit" type="text" id="fontChange">
+
+            <button class="button" type="button" onclick="changeFont()">Change font</button>
+
+        </div>
+
+        <div class="basic">
+            <p class="noWhitespace">Save your progress</p>
+            
+            <br>
+            
+            <p class="noWhitespace">Enter save name</p>
+            <input class="textboxFit" type="text" id="saveName">
+            <button class="button" type="button" onclick="saveWork()">Save</button>
+
+            <br><br>
+
+            <p class="noWhitespace">Load previous save</p>
+            
+            <br>
+            
+            <p class="noWhitespace">Enter save name</p>
+            <input class="textboxFit" type="text" id="loadName">
+            <button class="button" type="button" onclick="loadWork()">Load</button>
+
+        </div>
+
+        <div class="output" id="output">
+
+            <p id="outputText"></p>
+
+        </div>
+
+    </body>
+    
+</html>

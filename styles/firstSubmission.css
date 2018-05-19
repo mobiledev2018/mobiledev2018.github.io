@@ -15,6 +15,7 @@ div.basic
     margin-bottom: 10px;
 
 }
+
 div.output 
 {
     width: 75%;
@@ -44,11 +45,13 @@ p.noWhitespace
     border: none;
     border-radius: 15px;
 }
+
 .button:hover 
 {
     background-color: darkgray;
     color: white;
 }
+
 .button:active 
 {
     background-color: dimgray;
