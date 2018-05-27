@@ -32,14 +32,14 @@ function saveWork()
 
     var ObjectJSON = JSON.stringify(savedObject); 
 
-    localStorage.setItem("storage" + storageName, ObjectJSON);
+    localStorage.setItem(storageName, ObjectJSON);
 }
 
 function loadWork()
 {
     var loadName = document.getElementById('loadName').value
 
-    var loadedJSON = localStorage.getItem("storage" + loadName);
+    var loadedJSON = localStorage.getItem(loadName);
 
     var loadedObject = JSON.parse(loadedJSON);
 

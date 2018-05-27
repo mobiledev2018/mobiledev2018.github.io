@@ -8,40 +8,62 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="CIT 261 Assignments">
 
-        <link rel="stylesheet" href="styles/transitions.css">
+        <script type="text/javascript" src="scripts/canvas.js"></script>
 
-        <title>Transitions</title>
+        <title>Video, Audio, Canvas</title>
 
     </head>
 
     <body>
 
-        <video width="320" height="240">
-            <source src="movie.mp4" type="video/mp4">
+        <p id="hi">Autoplay and Mute</p>
+
+        <video width="320" height="240" autoplay muted>
+            <source src="video/fire.mp4" type="video/mp4">
         </video> 
 
-        <video width="320" height="240" controls>
-            <source src="movie.mp4" type="video/mp4">
-        </video> 
+        <br>
 
-        <video width="320" height="240" controls autoplay muted>
-            <source src="movie.mp4" type="video/mp4">
-        </video> 
+        <p>Autoplay, Controls, Loop</p>
 
-        <video width="320" height="240" controls loop>
-            <source src="movie.mp4" type="video/mp4">
+        <video width="320" height="240" controls autoplay loop>
+            <source src="video/ice-melting.mp4" type="video/mp4">
         </video> 
+        <br>
+
+        <p>Controls and Poster</p>
+
+        <video controls poster="images/rain.png" width="320" height="240" controls>
+            <source src="video/lightning.mp4" type="video/mp4">
+        </video> 
+        <br>
+
+        <p>Controls</p>
 
         <audio controls>
-            <source src="../audio/Vivaldi-Summer.mp3" type="audio/mp3">
+            <source src="audio/bach.mp3" type="audio/mpeg">
         </audio>
+        <br>
+
+        <p>Controls and loop</p>
+
+        <audio controls loop>
+            <source src="audio/bach-2.mp3" type="audio/mpeg">
+        </audio>
+        <br>
+        <br>
+
+        <button type="button" onclick="rectangle()">Draw Rectangle</button>
+        <br>
+
+        <canvas id="draw"></canvas>
+        <br>
+
+        <button type="button" onclick="nameDraw()">Draw Name</button>
+        <br>
+
+        <canvas id="drawName"></canvas>
 
     </body>
 
-</html> 
-
-<video width="320" height="240" controls>
-    <source src="movie.mp4" type="video/mp4">
-    <source src="movie.ogg" type="video/ogg">
-    Your browser does not support the video tag.
-</video> 
+</html>
