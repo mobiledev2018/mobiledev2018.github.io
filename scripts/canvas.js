@@ -15,3 +15,10 @@ function nameDraw()
     create.font = "30px Verdana";
     create.strokeText("Cole Cannon",1,30);
 }
+
+function changeprop()
+{   
+    var first = document.getElementsByClassName("hello");
+    var second = document.getElementsByClassName("hello");
+
+}

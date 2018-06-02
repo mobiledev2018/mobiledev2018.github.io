@@ -11,8 +11,6 @@
 }
 
 div.spin {
-    display: block;
-
     margin: 5%;
     width: 10vw;
     height: 10vw;
@@ -27,33 +25,31 @@ div.spin {
 @keyframes skewYdir {
     0%   
     {
-         transform: skewY(0deg);
+        transform: skewY(0deg);
     }
-    
+
     25%  
     {
-         transform: skewY(20deg);
+        transform: skewY(20deg);
     }
-    
+
     50% 
     {
         transform: skewY(0deg);
     }
-    
+
     75% 
     {
-         transform: skewY(-20deg);
+        transform: skewY(-20deg);
     }
-    
+
     100% 
     {
-         transform: skewY(0deg);
+        transform: skewY(0deg);
     }
 }
 
 div.skewYdir {
-    display: block;
-
     margin: 5%;
     width: 10vw;
     height: 10vw;
@@ -68,33 +64,31 @@ div.skewYdir {
 @keyframes translateXdir {
     0%   
     {
-         transform: translateX(0vw);
+        transform: translateX(0vw);
     }
-    
+
     25%  
     {
-         transform: translateX(20vw);
+        transform: translateX(20vw);
     }
-    
+
     50% 
     {
         transform: translateX(40vw);
     }
-    
+
     75% 
     {
-         transform: translateX(20vw);
+        transform: translateX(20vw);
     }
-    
+
     100% 
     {
-         transform: translateX(0vw);
+        transform: translateX(0vw);
     }
 }
 
 div.translateXdir {
-    display: block;
-
     margin: 5%;
     width: 10vw;
     height: 10vw;

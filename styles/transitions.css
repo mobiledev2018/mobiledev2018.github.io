@@ -15,6 +15,7 @@ div
 
 #linear 
 {
+    transition-delay: 2s;
     transition-timing-function: linear;
 }
 
