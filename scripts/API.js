@@ -1,6 +1,6 @@
 var weatherObject = new XMLHttpRequest;
 
-weatherObject.open("GET", "http://api.openweathermap.org/data/2.5/weather?q=Salt%20Lake%20City&units=metric&APPID=0e08266a16752f6b3e85f662e36178a6", true);
+weatherObject.open("GET", "https://api.openweathermap.org/data/2.5/weather?q=Salt%20Lake%20City&units=metric&APPID=0e08266a16752f6b3e85f662e36178a6", true);
 
 weatherObject.send();
 
@@ -17,12 +17,12 @@ weatherObject.onload = function()
 
     document.getElementById("temp").innerHTML = temper.toPrecision(2);
 
-    document.getElementById("weather-icon").src = "http://openweathermap.org/img/w/" + weatherInfo.weather[0].icon +".png";
+    document.getElementById("weather-icon").src = "https://openweathermap.org/img/w/" + weatherInfo.weather[0].icon +".png";
 }
 
 var weatherObject2 = new XMLHttpRequest;
 
-weatherObject2.open("GET", "http://api.openweathermap.org/data/2.5/weather?q=London&units=metric&APPID=0e08266a16752f6b3e85f662e36178a6", true);
+weatherObject2.open("GET", "https://api.openweathermap.org/data/2.5/weather?q=London&units=metric&APPID=0e08266a16752f6b3e85f662e36178a6", true);
 
 weatherObject2.send();
 
@@ -39,12 +39,12 @@ weatherObject2.onload = function()
 
     document.getElementById("temp2").innerHTML = temper2.toPrecision(2);
 
-    document.getElementById("weather-icon2").src = "http://openweathermap.org/img/w/" + weatherInfo2.weather[0].icon +".png";
+    document.getElementById("weather-icon2").src = "https://openweathermap.org/img/w/" + weatherInfo2.weather[0].icon +".png";
 }
 
 var weatherObject3 = new XMLHttpRequest;
 
-weatherObject3.open("GET", "http://api.openweathermap.org/data/2.5/weather?q=Tokyo&units=metric&APPID=0e08266a16752f6b3e85f662e36178a6", true);
+weatherObject3.open("GET", "https://api.openweathermap.org/data/2.5/weather?q=Tokyo&units=metric&APPID=0e08266a16752f6b3e85f662e36178a6", true);
 
 weatherObject3.send();
 
@@ -61,5 +61,5 @@ weatherObject3.onload = function()
 
     document.getElementById("temp3").innerHTML = temper3.toPrecision(2);
 
-    document.getElementById("weather-icon3").src = "http://openweathermap.org/img/w/" + weatherInfo3.weather[0].icon +".png";
+    document.getElementById("weather-icon3").src = "https://openweathermap.org/img/w/" + weatherInfo3.weather[0].icon +".png";
 }
