@@ -13,9 +13,20 @@ div
     transition: all 3s;
 }
 
+div:hover
+{
+    width: 400px;
+    height: 400px;
+    background: white;
+    color: black;
+    font-size: 80px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 400px;
+}
+
 #linear 
 {
-    transition-delay: 2s;
     transition-timing-function: linear;
 }
 
@@ -42,18 +53,4 @@ div
 #cubic
 {
     transition-timing-function: cubic-bezier(.81,.01,.27,.99);
-}
-
-
-div:hover
-{
-    width: 400px;
-    height: 400px;
-    background: white;
-    color: black;
-    font-size: 80px;
-    text-align: center;
-    vertical-align: middle;
-    line-height: 400px;
-
 }

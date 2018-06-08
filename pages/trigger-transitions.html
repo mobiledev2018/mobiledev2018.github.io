@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="../styles/trigger-transitions.css">
+        <script type="text/javascript" src="../scripts/trigger-transitions.js"></script>
+
+        <title>Transitions</title>
+
+    </head>
+
+    <body>
+
+        <button onclick="add()">Start Transition</button>
+        <button class="over" onclick="remove()">Revert Transition</button>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="box" id="linear">Hello</div>
+        <div class="box" id="ease">,</div>
+        <div class="box" id="ease-in">how</div>
+        <div class="box" id="ease-out">are</div>
+        <div class="box" id="ease-in-out">you</div>
+        <div class="box" id="cubic">?</div>
+        <br>
+        <br>
+        <div style="margin-top: 10%">
+            <button onclick="startAnimations()">Start Animation</button>
+            <button onclick="stopAnimations()">Stop Animation</button>
+            <div id="spin" class="spin"></div>
+            <div id="skewYdir" class="skewYdir"></div>
+            <div id="translateXdir" class="translateXdir"></div>
+        </div>
+
+
+    </body>
+
+</html>

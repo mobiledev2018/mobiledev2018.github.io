@@ -11,9 +11,7 @@ function create() {
 function clearElements() {
     var x = document.querySelectorAll("#hi");
 
-    var i;
-
-    for(i = 0; i < x.length; i++)
+    for(var i = 0; i < x.length; i++)
     {
         x[i].outerHTML = "";
     }

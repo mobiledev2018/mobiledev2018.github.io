@@ -1,0 +1,164 @@
+.box
+{
+    width: 100px;
+    height: 100px;
+    background: black;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 100px;
+    float: left;
+    transform: rotate(0deg);
+    transition: all 3s;
+}
+
+.move
+{
+    width: 400px;
+    height: 400px;
+    background: white;
+    color: black;
+    font-size: 80px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 400px;
+    float: left;
+    transform: rotate(1080deg);
+    transition: all 3s;
+}
+
+#linear 
+{
+    transition-timing-function: linear;
+}
+
+#ease
+{
+    transition-timing-function: ease;
+}
+
+#ease-in
+{
+    transition-timing-function: ease-in;
+}
+
+#ease-out 
+{
+    transition-timing-function: ease-out;
+}
+
+#ease-in-out 
+{
+    transition-timing-function: ease-in-out;
+}
+
+#cubic
+{
+    transition-timing-function: cubic-bezier(.81,.01,.27,.99);
+}
+
+@keyframes spin {
+    from 
+    {
+        transform: rotate(0deg);
+    }
+
+    to 
+    {
+        transform: rotate(360deg);;
+    }
+}
+
+div.spin {
+    margin: 5%;
+    width: 10vw;
+    height: 10vw;
+    background-color: green;
+
+    animation-name: spin;
+    animation-duration: 0.7s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-play-state: paused;
+}
+
+@keyframes skewYdir {
+    0%   
+    {
+        transform: skewY(0deg);
+    }
+
+    25%  
+    {
+        transform: skewY(20deg);
+    }
+
+    50% 
+    {
+        transform: skewY(0deg);
+    }
+
+    75% 
+    {
+        transform: skewY(-20deg);
+    }
+
+    100% 
+    {
+        transform: skewY(0deg);
+    }
+}
+
+div.skewYdir {
+    margin: 5%;
+    width: 10vw;
+    height: 10vw;
+    background-color: blueviolet;
+
+    animation-name: skewYdir;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-play-state: paused;
+}
+
+@keyframes translateXdir {
+    0%   
+    {
+        transform: translateX(0vw);
+    }
+
+    25%  
+    {
+        transform: translateX(20vw);
+    }
+
+    50% 
+    {
+        transform: translateX(40vw);
+    }
+
+    75% 
+    {
+        transform: translateX(20vw);
+    }
+
+    100% 
+    {
+        transform: translateX(0vw);
+    }
+}
+
+div.translateXdir {
+    margin: 5%;
+    width: 10vw;
+    height: 10vw;
+    background-color: goldenrod;
+
+    animation-name: translateXdir;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-play-state: paused;
+}
