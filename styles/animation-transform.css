@@ -1,3 +1,15 @@
+div.spin {
+    margin: 5%;
+    width: 10vw;
+    height: 10vw;
+    background-color: green;
+
+    animation-name: spin;
+    animation-duration: 0.7s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
 @keyframes spin {
     from 
     {
@@ -10,15 +22,15 @@
     }
 }
 
-div.spin {
+div.skewYdir {
     margin: 5%;
     width: 10vw;
     height: 10vw;
-    background-color: green;
+    background-color: blueviolet;
 
-    animation-name: spin;
-    animation-duration: 0.7s;
-    animation-timing-function: linear;
+    animation-name: skewYdir;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
 }
 
@@ -49,13 +61,13 @@ div.spin {
     }
 }
 
-div.skewYdir {
+div.translateXdir {
     margin: 5%;
     width: 10vw;
     height: 10vw;
-    background-color: blueviolet;
+    background-color: goldenrod;
 
-    animation-name: skewYdir;
+    animation-name: translateXdir;
     animation-duration: 2s;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
@@ -86,16 +98,4 @@ div.skewYdir {
     {
         transform: translateX(0vw);
     }
-}
-
-div.translateXdir {
-    margin: 5%;
-    width: 10vw;
-    height: 10vw;
-    background-color: goldenrod;
-
-    animation-name: translateXdir;
-    animation-duration: 2s;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
 }

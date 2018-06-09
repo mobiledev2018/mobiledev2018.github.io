@@ -1,0 +1,111 @@
+div.spin {
+    margin: 10%;
+    margin-left: 38%;
+    width: 10vw;
+    height: 10vw;
+    background-color: dimgray;
+
+    animation-name: spin;
+    animation-duration: .5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes spin {
+    from 
+    {
+        transform: rotate(0deg);
+    }
+
+    to 
+    {
+        transform: rotate(360deg);;
+    }
+}
+
+div.transition
+{
+    width: 30%;
+    height: 100%;
+    background: grey;
+    color: white;
+
+    transition-timing-function: linear;
+    transition: all 1s;
+}
+
+div.transition:hover
+{
+    width: 100%;
+}
+
+div.container
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1 fr;
+    grid-column-gap: 3vw;
+    grid-row-gap: 3vw;
+    text-align: center;
+}
+
+div.leftTop
+{
+    border: 1px solid black;
+    height: 23vw;
+}
+
+div.rightTop
+{
+    border: 1px solid black;
+    height: 23vw;
+    overflow: scroll;
+}
+
+div.leftMiddle
+{
+    border: 1px solid black;
+    height: 23vw;
+    text-align: center;
+}
+
+div.rightMiddle
+{
+    border: 1px solid black;
+    height: 23vw;
+    overflow: scroll;
+}
+
+div.leftBottom
+{
+    border: 1px solid black;
+    height: 23vw;
+    text-align: center;
+}
+
+div.rightBottom
+{
+    border: 1px solid black;
+    height: 23vw;
+}
+
+button
+{
+    margin: 3%;
+    padding: 3%;
+    background-color: whitesmoke;
+    border: none;
+    color: black;
+    border-radius: 10px;
+    box-shadow: 1px 2px 3px rgba(0,0,0,.1);
+}
+
+button:hover
+{
+    background-color: rgba(0,0,0,.1);
+}
+
+button:active
+{
+    background-color: rgba(0,0,0,.2);
+}
