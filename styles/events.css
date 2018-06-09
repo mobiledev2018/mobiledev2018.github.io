@@ -4,13 +4,17 @@ div.spin {
     width: 10vw;
     height: 10vw;
     background-color: dimgray;
-    border-top: 6px solid red;
 
     animation-name: spin;
-    animation-duration: 1s;
+    animation-duration: 2s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
 }
+
+div.spin p {
+    font-size: 4vw;
+}
+
 
 @keyframes spin {
     from 
@@ -88,6 +92,7 @@ div.rightBottom
 {
     border: 1px solid black;
     height: 23vw;
+    overflow: scroll;
 }
 
 button
