@@ -39,7 +39,7 @@ div.transition
     transition: all 1s;
 }
 
-div.transition:hover, div.transition:active
+div.transition:hover
 {
     width: 100%;
 }
