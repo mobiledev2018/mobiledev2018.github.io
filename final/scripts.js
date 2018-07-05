@@ -31,7 +31,7 @@ function loadWeather(weatherURL){
 
         document.getElementById("description").innerHTML = capitalizeFirstLetter(weatherInfo.weather[0].description);
 
-        document.getElementById("temp").innerHTML = "Temperature: " + weatherInfo.main.temp
+        document.getElementById("temp").innerHTML = weatherInfo.main.temp + "&#176;F"
 
         document.getElementById("high").innerHTML = "High: " +weatherInfo.main.temp_max;
 
