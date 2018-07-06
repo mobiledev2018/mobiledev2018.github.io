@@ -195,12 +195,42 @@ function addLocation()
         locations.push(locationBox.value);
     }
 
-    console.log(locations.length);
-
     locationBox.value = "";
 
+    updateLocationSelector();
+
     localStorage.locationArray = JSON.stringify(locations);
+}
 
+function changeLocation()
+{
 
+}
 
+function updateLocationSelector()
+{
+    clearLocationSelector();
+    createLocationSelector();
+}
+
+function createLocationSelector()
+{
+    var selector = document.getElementById("locationSelector");
+
+    for(var i = 0; i < locations.length; i++)
+    {
+        var option = document.createElement("option");
+        option.text = locations[i];
+        selector.add(option);
+    }
+}
+
+function clearLocationSelector()
+{
+    var selector = document.getElementById("locationSelector");
+    
+    for(var i = selector.options.length - 1 ; i >= 1 ; i--)
+    {
+        selector.remove(i);
+    }
 }
