@@ -87,7 +87,12 @@ function loadForecast(forecastURL){
 
             //document.getElementById("temp" + i).innerHTML = forecastInfo.list[i - 1].main.temp + "&#176;F";
 
-            var increment = (((i - 1) * 8) + 6);
+            var increment = ((i - 1) * 8);
+
+            if(i == 1)
+            {
+                increment += 8;
+            }
 
             document.getElementById("high" + i).innerHTML = forecastInfo.list[increment].main.temp_max.toFixed(2);
 
@@ -198,14 +203,20 @@ function updateLocation()
 function addLocation(name)
 {
     var locationBox = document.getElementById("locationBox");
+    var selector = document.getElementById("locationSelector");
 
-    if(locationBox.value != "")
-    {
-        locations.push(name);
-        updateLocationSelector();
+    locations.push(name);
+    updateLocationSelector();
+    localStorage.locationArray = JSON.stringify(locations);
+    locations.value = "";
+    clearSearchViewer();
 
-        localStorage.locationArray = JSON.stringify(locations);
-    }
+selector
+    
+    buildSavedURLS(selector.options[selector.selectedIndex].value);
+
+
+
 }
 
 function changeLocation()
@@ -272,5 +283,18 @@ function searchLocation()
                 holder.appendChild(button);
             }
         }, 1000);
+    }
+}
+
+function removeCurrentLocation()
+{
+    var selector = document.getElementById("locationSelector");
+}
+
+function clearSearchViewer()
+{
+    var myNode = document.getElementById("searchViewer");
+    while (myNode.firstChild) {
+        myNode.removeChild(myNode.firstChild);
     }
 }
