@@ -33,11 +33,7 @@ function loadWeather(weatherURL){
 
         document.getElementById("temp").innerHTML = weatherInfo.main.temp + "&#176;F"
 
-        document.getElementById("high").innerHTML = "High: " +weatherInfo.main.temp_max;
-
-
-        document.getElementById("low").innerHTML = "Low: " +weatherInfo.main.temp_min;
-
+        document.getElementById("highlow").innerHTML = weatherInfo.main.temp_max + "&#176;F / " + weatherInfo.main.temp_min + "&#176;F";
 
         document.getElementById("icon").src = "icons/" + weatherInfo.weather[0].icon + ".png";
 
@@ -59,76 +55,22 @@ function loadForecast(forecastURL){
         var forecastInfo = JSON.parse(forecastObject.responseText);   
         console.log(forecastInfo);
 
-        //day one
+        for(var i = 1; i < 6; i++){
 
-        document.getElementById("onedesc").innerHTML = capitalizeFirstLetter(forecastInfo.list["0"].weather["0"].description);
+            //document.getElementById("desc" + i).innerHTML = capitalizeFirstLetter(forecastInfo.list[i - 1].weather["0"].description);
 
-        document.getElementById("onetemp").innerHTML = "Temp: " + forecastInfo.list["0"].main.temp;
+            //document.getElementById("temp" + i).innerHTML = forecastInfo.list[i - 1].main.temp + "&#176;F";
+            
+            var increment = (((i - 1) * 8) + 7);
 
-        document.getElementById("onehigh").innerHTML = "H: " +forecastInfo.list["0"].main.temp_max;
-
-
-        document.getElementById("onelow").innerHTML = "L: " +forecastInfo.list["0"].main.temp_min;
-
-
-        document.getElementById("oneicon").src = "icons/" + forecastInfo.list["0"].weather["0"].icon + ".png";
-
-        //day two
-
-        document.getElementById("twodesc").innerHTML = capitalizeFirstLetter(forecastInfo.list["1"].weather["0"].description);
-
-        document.getElementById("twotemp").innerHTML = "Temp: " + forecastInfo.list["6"].main.temp;
-
-        document.getElementById("twohigh").innerHTML = "H: " +forecastInfo.list["6"].main.temp_max;
+            document.getElementById("high" + i).innerHTML = parseInt(forecastInfo.list[increment].main.temp_max);
 
 
-        document.getElementById("twolow").innerHTML = "L: " +forecastInfo.list["6"].main.temp_min;
+            document.getElementById("low" + i).innerHTML = " / " + parseInt(forecastInfo.list[increment].main.temp_min);
 
 
-        document.getElementById("twoicon").src = "icons/" + forecastInfo.list["6"].weather["0"].icon + ".png";
-
-        //day three
-
-        document.getElementById("threedesc").innerHTML = capitalizeFirstLetter(forecastInfo.list["2"].weather["0"].description);
-
-        document.getElementById("threetemp").innerHTML = "Temp: " + forecastInfo.list["13"].main.temp;
-
-        document.getElementById("threehigh").innerHTML = "H: " +forecastInfo.list["13"].main.temp_max;
-
-
-        document.getElementById("threelow").innerHTML = "L: " +forecastInfo.list["13"].main.temp_min;
-
-
-        document.getElementById("threeicon").src = "icons/" + forecastInfo.list["13"].weather["0"].icon + ".png";
-
-        //day four
-
-        document.getElementById("fourdesc").innerHTML = capitalizeFirstLetter(forecastInfo.list["3"].weather["0"].description);
-
-        document.getElementById("fourtemp").innerHTML = "Temp: " + forecastInfo.list["20"].main.temp;
-
-        document.getElementById("fourhigh").innerHTML = "H: " +forecastInfo.list["20"].main.temp_max;
-
-
-        document.getElementById("fourlow").innerHTML = "L: " +forecastInfo.list["20"].main.temp_min;
-
-
-        document.getElementById("fouricon").src = "icons/" + forecastInfo.list["20"].weather["0"].icon + ".png";
-
-        //day five
-
-        document.getElementById("fivedesc").innerHTML = capitalizeFirstLetter(forecastInfo.list["4"].weather["0"].description);
-
-        document.getElementById("fivetemp").innerHTML = "Temp: " + forecastInfo.list["27"].main.temp;
-
-        document.getElementById("fivehigh").innerHTML = "H: " +forecastInfo.list["27"].main.temp_max;
-
-
-        document.getElementById("fivelow").innerHTML = "L: " +forecastInfo.list["27"].main.temp_min;
-
-
-        document.getElementById("fiveicon").src = "icons/" + forecastInfo.list["27"].weather["0"].icon + ".png";
-
+            document.getElementById("icon" + i).src = "icons/" + forecastInfo.list[increment].weather["0"].icon + ".png";
+        }
 
         loadingScreenDeactivate();
         triggerEnterAnimation();
@@ -152,10 +94,10 @@ function getLocation() {
 }
 
 function buildLocationURLS(position) {
-    
+
     var lon = position.coords.longitude;
     var lat = position.coords.latitude;
-    
+
     weatherURL = "https://api.openweathermap.org/data/2.5/weather?" + "lat=" + lat + "&lon=" + lon + "&units=imperial&APPID=0e08266a16752f6b3e85f662e36178a6"
 
     forecastURL = "https://api.openweathermap.org/data/2.5/forecast?" + "lat=" + lat + "&lon=" + lon + "&units=imperial&APPID=0e08266a16752f6b3e85f662e36178a6"
