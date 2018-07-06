@@ -5,7 +5,7 @@ body
 
 div#flexwrappermain
 {
-    height: 2000px;
+    height: 100vh + 100px;
     display: flex;
     flex-direction: column;
     filter: blur(0px);

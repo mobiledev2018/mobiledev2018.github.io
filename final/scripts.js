@@ -211,11 +211,10 @@ function addLocation(name)
     locations.value = "";
     clearSearchViewer();
 
-selector
-    
-    buildSavedURLS(selector.options[selector.selectedIndex].value);
+    document.getElementById('locationSelector').value = name;
+    var selector = document.getElementById("locationBox").value = "";
 
-
+    buildSavedURLS(name);
 
 }
 
