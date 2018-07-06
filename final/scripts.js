@@ -148,7 +148,8 @@ function buildCachedLocationURLS() {
 
 function buildSavedURLS(name)
 {
-    var weatherURL = "https://api.openweathermap.org/data/2.5/find?q=" + name + "&type=like&units=imperial&APPID=0e08266a16752f6b3e85f662e36178a6";
+    var weatherURL = "https://api.openweathermap.org/data/2.5/weather?q=" + name + "&units=imperial&APPID=0e08266a16752f6b3e85f662e36178a6";
+    var forecastURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + name + "&units=imperial&APPID=0e08266a16752f6b3e85f662e36178a6";
 
     loadWeatherAndForecast(weatherURL, forecastURL);
 }
@@ -194,15 +195,14 @@ function updateLocation()
     getLocation();
 }
 
-function addLocation()
+function addLocation(name)
 {
     var locationBox = document.getElementById("locationBox");
 
     if(locationBox.value != "")
     {
-        locations.push(locationBox.value);
+        locations.push(name);
         updateLocationSelector();
-        locationBox.value = "";
 
         localStorage.locationArray = JSON.stringify(locations);
     }
@@ -267,7 +267,7 @@ function searchLocation()
                 console.log("hey");
                 var holder = document.getElementById("searchViewer");
                 var button = document.createElement("BUTTON");
-                button.setAttribute("onclick", "addLocation(" + searchInfo.list[i].name + ", " + searchInfo.list[i].sys.country + ")");
+                button.setAttribute("onclick", "addLocation(" + "\"" + searchInfo.list[i].name + ", " + searchInfo.list[i].sys.country + "\"" + ")");
                 button.innerHTML = searchInfo.list[i].name + ", " + searchInfo.list[i].sys.country;
                 holder.appendChild(button);
             }
