@@ -5,7 +5,7 @@ body
 
 div#flexwrappermain
 {
-    height: 99vh;
+    height: 2000px;
     display: flex;
     flex-direction: column;
     filter: blur(0px);
@@ -91,6 +91,15 @@ div.seven
     /*background-color: coral;*/
     height: 5vh;
     text-align: center;
+}
+div.eight
+{
+    /*background-color: coral;*/
+    margin-top: 100px;
+    height: 15vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
 div#loading
