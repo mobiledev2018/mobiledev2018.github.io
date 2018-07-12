@@ -1,7 +1,11 @@
 var animation = document.getElementById("flexwrappermain");
 
 animation.addEventListener("animationend", removeEnterAnimation, false);
+
 var length = 0;
+
+var weatherURL;
+var forecastURL;
 
 if(localStorage.locationArray)
 {
@@ -12,10 +16,6 @@ else
 {
     var locations = new Array();
 
-    /*for(var i = 0; i < 100; i++)
-    {
-        locations[i] = "-1";
-    }*/
     localStorage.locationArray = JSON.stringify(locations);
 }
 
@@ -30,8 +30,34 @@ else
     getLocation();
 }
 
-var weatherURL;
-var forecastURL;
+function bootSavedLocations()
+{
+    if(localStorage.locationArray)
+    {
+        var locations = JSON.parse(localStorage.locationArray);
+        updateLocationSelector();
+    }
+    else
+    {
+        var locations = new Array();
+
+        localStorage.locationArray = JSON.stringify(locations);
+    }
+}
+
+function bootLocation()
+{
+    if((localStorage.lon || localStorage.lat))
+    {
+        loadingScreenActivate();
+        buildCachedLocationURLS();
+    }
+
+    else
+    {
+        getLocation();
+    }
+}
 
 function loadWeatherAndForecast(weatherURL, forecastURL)
 {
@@ -107,7 +133,6 @@ function loadForecast(forecastURL){
         triggerEnterAnimation();
     }
 }
-
 
 function getLocation() {
     loadingScreenActivate();
@@ -222,7 +247,14 @@ function changeLocation()
 {
     var selector = document.getElementById("locationSelector");
 
-    buildSavedURLS(selector.options[selector.selectedIndex].value);
+    if(selector.value == "Current Location")
+    {
+        bootLocation();
+    }
+    else
+    {
+        buildSavedURLS(selector.options[selector.selectedIndex].value);
+    }
 }
 
 function updateLocationSelector()
@@ -255,6 +287,8 @@ function clearLocationSelector()
 
 function searchLocation()
 { 
+    clearSearchViewer();
+
     var list = "https://api.openweathermap.org/data/2.5/find?q=" + document.getElementById("locationBox").value + "&type=like&units=imperial&APPID=0e08266a16752f6b3e85f662e36178a6";
 
     var searchObject = new XMLHttpRequest;
@@ -271,23 +305,42 @@ function searchLocation()
 
         console.log(searchInfo);
 
-        setTimeout(function(){
-            for(var i = 0; i < searchInfo.list.length; i++)
-            {
-                console.log("hey");
-                var holder = document.getElementById("searchViewer");
-                var button = document.createElement("BUTTON");
-                button.setAttribute("onclick", "addLocation(" + "\"" + searchInfo.list[i].name + ", " + searchInfo.list[i].sys.country + "\"" + ")");
-                button.innerHTML = searchInfo.list[i].name + ", " + searchInfo.list[i].sys.country;
-                holder.appendChild(button);
-            }
-        }, 1000);
+        if(searchInfo.list.length == 0)
+        {
+            document.getElementById("searchViewer").innerHTML = "Location not available";
+        }
+        else
+        {
+            setTimeout(function(){
+                for(var i = 0; i < searchInfo.list.length; i++)
+                {
+                    var holder = document.getElementById("searchViewer");
+                    var button = document.createElement("BUTTON");
+                    button.setAttribute("onclick", "addLocation(" + "\"" + searchInfo.list[i].name + ", " + searchInfo.list[i].sys.country + "\"" + ")");
+                    button.innerHTML = searchInfo.list[i].name + ", " + searchInfo.list[i].sys.country;
+                    holder.appendChild(button);
+                }
+            }, 1000);
+        }
     }
 }
 
 function removeCurrentLocation()
 {
-    var selector = document.getElementById("locationSelector");
+    var selector = document.getElementById("locationSelector").value;
+
+    for(var i = 0; i < locations.length; i++)
+    {
+        if(locations[i] == selector)
+        {
+            locations.splice(i, 1);
+        }
+    }
+    localStorage.locationArray = JSON.stringify(locations);
+
+    updateLocationSelector();
+
+    bootLocation();
 }
 
 function clearSearchViewer()
