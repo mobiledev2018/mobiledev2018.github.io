@@ -10,32 +10,22 @@ div#flexwrappermain
     flex-direction: column;
     filter: blur(0px);
 
-    /*background-color: aquamarine;*/
+    transition: all 1s;
 }
 
 div.one
 {
-    /*background-color: coral;*/
     height: 5vh;
 }
 
 div.two
 {
-    /*background-color: rebeccapurple;*/
     text-align: center;
-
 }
 
 div.three
 {
-    /*background-color: blue;*/
     text-align: center;
-}
-
-div.four
-{
-
-    /*background-color: olivedrab;*/
 }
 
 div.four p
@@ -47,7 +37,6 @@ div.four p
 
 div.five
 {
-    /*background-color: thistle;*/
     display: flex;
     flex-direction: column;
 }
@@ -80,88 +69,115 @@ div.five div p
     font-size: 1.3em;
 }
 
-div.six
-{
-    /*background-color: gold;*/
-
-}
-
 div.seven
 {
-    /*background-color: coral;*/
     height: 5vh;
     text-align: center;
 }
+
 div.eight
 {
-    /*background-color: coral;*/
-    margin-top: 100px;
-    height: 15vh;
+    margin-top: 195px;
     text-align: center;
-    display: flex;
-    flex-direction: column;
 }
 
 div#loading
 {
-    display: none;
-    position: absolute;
-    top: 43vh;
-    left: 25vw;
+    display: block;
+    position: fixed;
+    line-height: 100vh;
+    width: 100vw;
     z-index: 1;
     font-size: 4em;
     color: black;
+    text-align: center;
+    vertical-align: middle;
+
+    transition: opacity 1s;
 }
 
-@keyframes bounceIn {
-    from,
-    20%,
-    40%,
-    60%,
-    80%,
+button
+{
+    margin-top: 2%;
+    height: 44px;
+    border: none;
+    background-color: none;
+    border-radius: 5px;
+    border: 1px solid black;
+    background-color: transparent;
+}
+
+button.remove
+{
+    height: 30px;
+    margin-top: 30px;
+}
+
+button.locationoptions
+{
+    text-align: center;
+    margin: 1px;
+    width: 80%;
+}
+
+select
+{
+    margin-top: 2%;
+    height: 44px;
+    width: 116px;
+    text-align: center;
+    border: 1px solid black;
+    background-color: transparent;
+}
+
+input
+{
+    height: 44px;
+    border: none;
+    border-radius: 5px;
+    border: 1px solid black;
+    background-color: transparent;
+}
+
+@keyframes bounceIn 
+{
+    from
+
     to {
-        -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
         animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
     }
 
     0% {
         opacity: 0;
-        -webkit-transform: scale3d(0.3, 0.3, 0.3);
         transform: scale3d(0.3, 0.3, 0.3);
     }
 
     20% {
-        -webkit-transform: scale3d(1.1, 1.1, 1.1);
         transform: scale3d(1.1, 1.1, 1.1);
     }
 
     40% {
-        -webkit-transform: scale3d(0.9, 0.9, 0.9);
         transform: scale3d(0.9, 0.9, 0.9);
     }
 
     60% {
         opacity: 1;
-        -webkit-transform: scale3d(1.03, 1.03, 1.03);
         transform: scale3d(1.03, 1.03, 1.03);
     }
 
     80% {
-        -webkit-transform: scale3d(0.97, 0.97, 0.97);
         transform: scale3d(0.97, 0.97, 0.97);
     }
 
     to {
         opacity: 1;
-        -webkit-transform: scale3d(1, 1, 1);
         transform: scale3d(1, 1, 1);
     }
 }
 
-.bounceIn {
-    -webkit-animation-duration: 0.75s;
+.bounceIn 
+{
     animation-duration: 0.75s;
-    -webkit-animation-name: bounceIn;
     animation-name: bounceIn;
 }
 

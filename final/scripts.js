@@ -93,7 +93,6 @@ function loadWeather(weatherURL){
 
 }
 
-//forecast
 function loadForecast(forecastURL){
     var forecastObject = new XMLHttpRequest;
 
@@ -145,7 +144,7 @@ function getLocation() {
     { 
         x.innerHTML = "Geolocation is not supported by this browser.";
 
-        loadingScreenDeactivate(0);
+        loadingScreenDeactivate();
     }
 }
 
@@ -201,12 +200,18 @@ function capitalizeFirstLetter(string) {
 function loadingScreenActivate()
 {
     document.getElementById("flexwrappermain").style.filter = "blur(20px)";
+
+    document.getElementById("loading").style.opacity = "1"; 
+
     document.getElementById("loading").style.display = "block"; 
 }
 
 function loadingScreenDeactivate()
 {
     document.getElementById("flexwrappermain").style.filter = "blur(0px)"; 
+
+    document.getElementById("loading").style.opacity = "0"; 
+
     document.getElementById("loading").style.display = "none"; 
 }
 
@@ -317,9 +322,11 @@ function searchLocation()
                     var holder = document.getElementById("searchViewer");
                     var button = document.createElement("BUTTON");
                     button.setAttribute("onclick", "addLocation(" + "\"" + searchInfo.list[i].name + ", " + searchInfo.list[i].sys.country + "\"" + ")");
+                    button.setAttribute("class", "locationoptions");
                     button.innerHTML = searchInfo.list[i].name + ", " + searchInfo.list[i].sys.country;
                     holder.appendChild(button);
                 }
+                 window.scrollTo(0,document.body.scrollHeight);
             }, 1000);
         }
     }

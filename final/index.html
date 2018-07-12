@@ -10,7 +10,7 @@
 
         <link rel="stylesheet" href="style.css">
 
-        <title>Final Weather Project</title>
+        <title>Mobile Web App Final</title>
 
     </head>
 
@@ -112,23 +112,23 @@
 
                 </div>
                 <div class="six"></div>
-
                 <div class="seven">
                     
                     <select id="locationSelector" onchange="changeLocation()">
                         <option>Current Location</option>
                     </select>
 
-                    <button onclick="updateLocation()">Update Geolocation</button>
+             
 
                     <p>Add a location by typing in the name</p>
-                    <input type="text" id="locationBox" placeholder="Search for location">
-                    <button onclick="searchLocation()">Search Location</button>
-                    <button onclick="removeCurrentLocation()">Remove Current Location</button>
+                    <input type="text" id="locationBox" placeholder="Search">
+                    <button onclick="searchLocation()">Search Location</button><br>
+                    <button onclick="removeCurrentLocation()" class="remove">Remove Current Location</button>
                 
                 </div>
-                
-                <div class="eight" id="searchViewer"></div>
+                <div class="eight">
+                <div id="searchViewer"></div>
+                </div>
 
             </div>
 
