@@ -110,7 +110,7 @@ function loadForecast(forecastURL){
 
             //document.getElementById("desc" + i).innerHTML = capitalizeFirstLetter(forecastInfo.list[i - 1].weather["0"].description);
 
-            //document.getElementById("temp" + i).innerHTML = forecastInfo.list[i - 1].main.temp + "&#176;F";
+            document.getElementById("temp" + i).innerHTML = forecastInfo.list[i - 1].main.temp + "&#176;F";
 
             var increment = ((i - 1) * 8);
 
@@ -119,10 +119,10 @@ function loadForecast(forecastURL){
                 increment += 8;
             }
 
-            document.getElementById("high" + i).innerHTML = forecastInfo.list[increment].main.temp_max.toFixed(2);
+            //document.getElementById("high" + i).innerHTML = forecastInfo.list[increment].main.temp_max.toFixed(2);
 
 
-            document.getElementById("low" + i).innerHTML = " / " + forecastInfo.list[increment].main.temp_min.toFixed(2);
+           // document.getElementById("low" + i).innerHTML = " / " + forecastInfo.list[increment].main.temp_min.toFixed(2);
 
 
             document.getElementById("icon" + i).src = "icons/" + forecastInfo.list[increment].weather["0"].icon + ".png";
