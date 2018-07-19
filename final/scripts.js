@@ -194,7 +194,7 @@ function showError(){
     for(var i = 1; i < 6; i++)
     {
 
-        document.getElementById("icon" + i).innerHTML = "icons/imageerror.png";
+        document.getElementById("icon" + i).src = "icons/imageerror.png";
     }
 
 }
