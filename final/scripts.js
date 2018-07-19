@@ -189,7 +189,13 @@ function showError(){
 
     loadingScreenDeactivate();
 
-    document.getElementById("icon").style.display = "none"; 
+    document.getElementById("icon").src = "icons/imageerror";
+    
+     for(var i = 1; i < 6; i++)
+     {
+
+            document.getElementById("icon" + i).innerHTML = "icons/imageerror";
+     }
 
 }
 
