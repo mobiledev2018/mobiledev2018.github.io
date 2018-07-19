@@ -122,7 +122,7 @@ function loadForecast(forecastURL){
             //document.getElementById("high" + i).innerHTML = forecastInfo.list[increment].main.temp_max.toFixed(2);
 
 
-           // document.getElementById("low" + i).innerHTML = " / " + forecastInfo.list[increment].main.temp_min.toFixed(2);
+            // document.getElementById("low" + i).innerHTML = " / " + forecastInfo.list[increment].main.temp_min.toFixed(2);
 
 
             document.getElementById("icon" + i).src = "icons/" + forecastInfo.list[increment].weather["0"].icon + ".png";
@@ -189,13 +189,13 @@ function showError(){
 
     loadingScreenDeactivate();
 
-    document.getElementById("icon").src = "icons/imageerror";
-    
-     for(var i = 1; i < 6; i++)
-     {
+    document.getElementById("icon").src = "icons/imageerror.png";
 
-            document.getElementById("icon" + i).innerHTML = "icons/imageerror";
-     }
+    for(var i = 1; i < 6; i++)
+    {
+
+        document.getElementById("icon" + i).innerHTML = "icons/imageerror.png";
+    }
 
 }
 
@@ -332,7 +332,7 @@ function searchLocation()
                     button.innerHTML = searchInfo.list[i].name + ", " + searchInfo.list[i].sys.country;
                     holder.appendChild(button);
                 }
-                 window.scrollTo(0,document.body.scrollHeight);
+                window.scrollTo(0,document.body.scrollHeight);
             }, 1000);
         }
     }
