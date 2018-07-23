@@ -113,21 +113,22 @@
                 </div>
                 <div class="six"></div>
                 <div class="seven">
-                    
+
                     <select id="locationSelector" onchange="changeLocation()">
                         <option>Current Location</option>
                     </select>
 
-             
+
 
                     <p>Add a location by typing in the name</p>
                     <input type="text" id="locationBox" placeholder="Search">
                     <button onclick="searchLocation()">Search Location</button><br>
+                    <button onclick="updateLocation()" class="remove">Update Current Location</button>
                     <button onclick="removeCurrentLocation()" class="remove">Remove Current Location</button>
-                
+
                 </div>
                 <div class="eight">
-                <div id="searchViewer"></div>
+                    <div id="searchViewer"></div>
                 </div>
 
             </div>
