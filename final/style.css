@@ -81,6 +81,12 @@ div.eight
     text-align: center;
 }
 
+div.nine
+{
+    margin-top: 50px;
+    text-align: center;
+}
+
 div#loading
 {
     display: block;
